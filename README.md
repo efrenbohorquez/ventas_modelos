@@ -6,3 +6,12 @@ Proyecto para predecir la demanda y optimizar el inventario usando redes neurona
 
 # ventas_modelos
 proyecto redes neuronales
+
+---
+
+**Autores:**
+- Oscar Tunjano
+- Jader A. Gomez
+- Efren Bohorquez
+
+**Materia:** Redes Neuronales (Maestría en Analítica de Datos)
