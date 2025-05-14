@@ -1,0 +1,7 @@
+# Ignorar archivos y carpetas comunes
+__pycache__/
+*.pyc
+.env
+.DS_Store
+data/raw/
+data/processed/
