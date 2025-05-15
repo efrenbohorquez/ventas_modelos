@@ -16,6 +16,13 @@ agg_df = agg_df.sort_values(['Branch', 'Product line', 'date_group'])
 # 2. Seleccionar un grupo de ejemplo (ajusta según tus datos reales)
 sample_data = agg_df[(agg_df['Branch'] == 'A') & (agg_df['Product line'] == 'Health and beauty')].reset_index(drop=True)
 
+# Unir variables temporales originales al sample_data
+# (date_group equivale a Date en df original)
+temp_vars = ['date_group', 'day_of_week', 'month', 'is_weekend']
+temp_df = df[['Date', 'day_of_week', 'month', 'is_weekend']].copy()
+temp_df = temp_df.rename(columns={'Date': 'date_group'})
+sample_data = sample_data.merge(temp_df, on='date_group', how='left')
+
 if len(sample_data) > 20:
     # 3. Crear secuencias para el modelo
     features = ['Quantity', 'day_of_week', 'month', 'is_weekend']

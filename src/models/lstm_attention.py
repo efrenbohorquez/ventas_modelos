@@ -29,7 +29,7 @@ class AttentionLayer(tf.keras.layers.Layer):
         # Aplicar pesos al contexto
         output = x * a
         
-        return output, a
+        return output  # Solo retornamos el tensor de salida
         
     def compute_output_shape(self, input_shape):
         return input_shape[0], input_shape[1], input_shape[2]
